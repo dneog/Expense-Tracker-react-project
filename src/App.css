@@ -34,7 +34,7 @@
 }
 .lab2{
     padding-right: 7px;
-    padding-left: 20px;
+    padding-left: 40px;
    
 }
 .buts2{
@@ -52,4 +52,40 @@
 .inp{
     padding: 5px;
    
+}
+.show{
+    width: 600px;
+    margin: auto;
+    display: flex;
+}
+.img{
+    width: 120px;
+    border-radius: 10%;
+}
+.sec{
+    flex-direction: column;
+    padding: 20px;
+    font-size: 20px;
+}
+.na{
+    padding-bottom: 7px;
+}
+.em span{
+    font-weight: bold;
+}
+.na span{
+    font-weight: bold;
+}
+.profile{
+    font-size: 22px;
+    color: #700000;
+    font-weight: bold;
+   
+}
+.prof{
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
 }

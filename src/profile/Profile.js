@@ -2,6 +2,7 @@ import AuthContext from '../Store/AuthContext'
 
 import { useRef, useContext } from 'react';
 import {useNavigate} from 'react-router-dom';
+import GetProfileData from './GetProfileData';
 
 const ProfileForm = () => {
   const navigate= useNavigate();
@@ -28,9 +29,14 @@ const ProfileForm = () => {
     
     ).then(res=> {
       navigate('/home')
-    })
+    }).catch(err=> {
+        console.log(err);
+    }
+
+    )
   }
   return (
+    <>
     <form className='' onSubmit={submitHandler} >
       <div className='form'>
         <label className='lab'>Name</label>
@@ -43,6 +49,9 @@ const ProfileForm = () => {
       </div>
       </div>
     </form>
+    <GetProfileData />
+    </>
+
   );
 }
 

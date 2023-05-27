@@ -78,18 +78,18 @@ const Auth = () => {
   <>
   <p className='heading'>SignUp</p>
 <form onSubmit={submitHandler}>
-<input type="email" placeholder='Email'  required ref={emailInputRef} />
-<input type="password" placeholder='Password' required />
-<input type="password"  placeholder='Confirm Password' required ref={passwordInputRef} />
+<input className='input' type="email" placeholder='Email'  required ref={emailInputRef} />
+<input className='input' type="password" placeholder='Password' required />
+<input className='input' type="password"  placeholder='Confirm Password' required ref={passwordInputRef} />
 <button className='button' type='submit'>Sign up</button>
 </form>
 </> ) : (
   <>
    <p className='heading'>Login</p>
 <form onSubmit={submitHandler}>
-<input type="email" placeholder='Email'  required ref={emailInputRef} />
+<input className='input' type="email" placeholder='Email'  required ref={emailInputRef} />
 
-<input type="password" placeholder='Confirm Password' required ref={passwordInputRef} />
+<input className='input' type="password" placeholder='Confirm Password' required ref={passwordInputRef} />
 <button className='button' type='submit'>Login</button>
 </form>
 </>

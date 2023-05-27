@@ -1,3 +1,55 @@
 .wel{
-    margin: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding: 15px;
+    font-size: 18px;
+}
+.pera{
+    padding: 5px;
+}
+
+.wel span{
+    color: rgb(13, 0, 255);
+    font-style: italic;
+}
+
+.para2{
+    background: #c6c6c635;
+   padding: 5px 10px;
+   border-radius: 10px;
+   font-style: italic;
+   
+}
+.form{
+    width: 600px;
+    margin: 40px auto;
+    font-size: 20px;
+}
+.lab{
+    padding-right: 7px;
+    
+   
+}
+.lab2{
+    padding-right: 7px;
+    padding-left: 20px;
+   
+}
+.buts2{
+   
+    padding-top: 15px;
+}
+.but2{
+    padding: 4px 6px;
+    font-size: 17px;
+    background: #a4000096;
+    border: 0;
+    color: white;
+    border-radius: 4px;
+}
+.inp{
+    padding: 5px;
+   
 }

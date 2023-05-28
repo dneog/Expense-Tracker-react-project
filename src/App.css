@@ -20,6 +20,7 @@
    padding: 5px 10px;
    border-radius: 10px;
    font-style: italic;
+   align-items: center;
    
 }
 .form{
@@ -96,4 +97,18 @@
 .but3{
     width: 100px;
     margin: auto;
+}
+.para3{
+    display: flex;
+
+}
+.but4{
+    padding: 4px 10px;
+    font-size: 17px;
+    background: #bc0000;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 15px;
+    cursor: pointer;
 }

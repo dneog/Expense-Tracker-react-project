@@ -2,7 +2,7 @@
 import './Auth.css';
 import { useState, useRef , useContext} from 'react';
 import AuthContext from '../Store/AuthContext';
-
+import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 
 const Auth = () => {
@@ -91,6 +91,8 @@ const Auth = () => {
 
 <input className='input' type="password" placeholder='Confirm Password' required ref={passwordInputRef} />
 <button className='button' type='submit'>Login</button>
+<Link to={'/password'}><p className='forgot'>Forgot Password</p></Link>
+
 </form>
 </>
 )}

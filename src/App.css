@@ -112,3 +112,7 @@
     margin-left: 15px;
     cursor: pointer;
 }
+.forgot{
+    text-decoration: underline;
+    cursor: pointer;
+}

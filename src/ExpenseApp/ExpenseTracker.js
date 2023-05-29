@@ -12,9 +12,36 @@ const ExpenseTracker = () => {
   const [expense, setExpense]= useState(0);
   const [transactions, setTransactions]= useState(TransactionData);
 
-  const saveData= ()=> {
-    localStorage.setItem('data', JSON.stringify(transactions))
+  const getData=()=> {
+    fetch('https://auth-51bda-default-rtdb.asia-southeast1.firebasedatabase.app/data.json',{
+      method: 'GET',  
+    }).then(response=> response.json()).then(data => {
+      if(data){
+        const newData= Object.values(data)
+        setTransactions(newData)
+      }
+    }).catch(err => {
+      console.log(err);
+    })
   }
+  useEffect(()=> {
+    CalculateExpense()
+    getData()
+  },[transactions])
+
+  useEffect(()=> {
+    
+    getData()
+    // CalculateExpense()
+    // let localState= JSON.parse(localStorage.getItem('data'))
+    // if(localState){
+    //   setTransactions(localState)
+    // }else{
+    //   CalculateExpense()
+    // }
+    
+  },[]);
+ 
   const CalculateExpense=()=> {
     let income=0, expense = 0;
     transactions.forEach((data) => {
@@ -26,7 +53,7 @@ const ExpenseTracker = () => {
     });
     setIncome(income)
     setExpense(expense)
-    saveData()
+    
   }
   
   
@@ -37,22 +64,26 @@ const ExpenseTracker = () => {
   }
 
   const handleDelete=(id)=> {
-   const newUpdatedTransaction= transactions.filter((item)=> item.id !== id)
-   setTransactions(newUpdatedTransaction)
+  //   fetch(`https://auth-51bda-default-rtdb.asia-southeast1.firebasedatabase.app/data/${id}.json`,{
+  //     method: 'DELETE'
+  //   }).then((response)=> {
+  //     if(response.ok){
+  //       console.log('Deleted Successfully');
+  //       const newUpdatedTransaction= transactions.filter((item)=> item.id !== id)
+  //  setTransactions(newUpdatedTransaction)
+  //     }else{
+  //       throw new Error('Failed to Delete')
+  //     }
+     
+  //   }).catch(err=> {
+  //     console.log(err);
+  //   })
+   
   }
 
-  useEffect(()=> {
-    let localState= JSON.parse(localStorage.getItem('data'))
-    if(localState){
-      setTransactions(localState)
-    }else{
-      CalculateExpense()
-    }
-    
-  },[]);
-  useEffect(()=> {
-    CalculateExpense()
-  },[transactions])
+ 
+ 
+  
   
   return (
     <div className='expenseMain'>
@@ -65,6 +96,24 @@ const ExpenseTracker = () => {
     <TransitionHistory transactions={transactions} onDelete={handleDelete} />
     </div>
   )
-}
+  }
+
+
+    // const saveData= ()=> {
+  //   // localStorage.setItem('data', JSON.stringify(transactions))
+  //   fetch('https://auth-51bda-default-rtdb.asia-southeast1.firebasedatabase.app/data.json', {
+  //    method: 'POST',
+  //    headers: {
+  //     'Content-Type': 'application/json'
+  //    },
+  //    body: JSON.stringify(transactions)
+  //   }).then(response=> response.json()).then(()=> {
+  //     console.log('Success');
+  //   }).catch(err=> {
+  //     console.log(err);
+  // })
+  // saveData()
+
+  // }
 
 export default ExpenseTracker

@@ -10,7 +10,19 @@ const AddExpense = ({newTransaction}) => {
   const data= {
     id: randomID(), name: nameValue, category: categoryValue , amount: parseInt(amountValue), type: type
    }
-   newTransaction(data)
+  //  newTransaction(data);
+
+   fetch('https://auth-51bda-default-rtdb.asia-southeast1.firebasedatabase.app/data.json', {
+    method: 'POST',
+    headers: {
+     'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+   }).then(response=> response.json()).then(()=> {
+     console.log('Success');
+   }).catch(err=> {
+     console.log(err);
+ })
    setNameValue('')
    setAmountValue('')
    setCategoryValue('')

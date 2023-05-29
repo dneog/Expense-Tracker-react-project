@@ -21,7 +21,7 @@
    border-radius: 10px;
    font-style: italic;
    align-items: center;
-   
+   margin-right: 10px;
 }
 .form{
     width: 600px;
@@ -91,7 +91,14 @@
     padding-bottom: 5px;
 }
 .verify{
-    padding: 10px;
+    padding: 4px 5px;
+    font-size: 17px;
+    background: #d5d5d5;
+    color: rgb(44, 44, 44);
+    border: 0;
+    border-radius: 5px;
+   
+    cursor: pointer;
     
 }
 .but3{
@@ -109,10 +116,16 @@
     color: white;
     border: 0;
     border-radius: 5px;
-    margin-left: 15px;
+    margin-left: 10px;
     cursor: pointer;
 }
 .forgot{
     text-decoration: underline;
     cursor: pointer;
+}
+.exp{
+    text-align: center;
+    padding-bottom: 20px;
+   font-weight: 400;
+ 
 }

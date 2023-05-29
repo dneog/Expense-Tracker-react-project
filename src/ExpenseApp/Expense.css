@@ -1,0 +1,187 @@
+.expenseMain{
+    width: 70%;
+    margin: 30px auto;
+   min-width: 600px;
+
+}
+.add{
+    display: flex;
+   justify-content: center;
+  
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 0.5px solid rgba(0, 0, 0, 0.511);
+    margin: 10px;
+}
+
+
+.total{
+    width: 40%;
+    border: 0.5px solid rgba(0, 0, 0, 0.488);
+    margin: 10px;
+    padding: 10px;
+    
+}
+.tran{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.tran3{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+.tran2{
+    text-align: center;
+    font-size: 25px;
+   padding-bottom: 5px;
+}
+.num{
+    padding: 15px;
+    font-size: 19px;
+    display: flex;
+    flex-direction: column;
+}
+.amou{
+    font-size: 16px;
+    margin-top: -12px;
+    padding-bottom: 5px;
+}
+.amounts{
+   
+    outline: none;
+    padding: 7px 5px;
+    font-size: 18px;
+    border: 0.5px solid rgba(0, 0, 0, 0.429);
+    border-radius: 5px;
+}
+.amounts3{
+    margin-top: 9px;
+    outline: none;
+    padding: 7px 5px;
+    font-size: 18px;
+    border: 0.5px solid rgba(0, 0, 0, 0.429);
+    border-radius: 5px;
+}
+.amounts2{
+    outline: none;
+    border-radius: 5px;
+    padding: 7px 5px;
+   margin-bottom: 9px;
+    font-size: 18px;
+    border: 0.5px solid rgba(0, 0, 0, 0.429);
+}
+.green{
+    font-size: 19px;
+    padding: 6px 0px;
+    border-radius: 5px;
+    border: 0;
+    background: #00c11d;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.red{
+    font-size: 19px;
+    padding: 6px 0px;
+    border-radius: 5px;
+    border: 0;
+    background: #f14216ed;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+
+.balance{
+    background: #e1e7ff;
+    margin-top: 10px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-right: 5px solid rgb(194, 153, 255);
+    
+}
+.balance2{
+    background: #baffc1;
+    margin-top: 10px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-right: 5px solid rgb(115, 237, 63);
+    
+}
+.balance3{
+    background: #ffb6b6;
+    margin-top: 10px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-right: 5px solid rgb(255, 73, 73);
+}
+.bal{
+    font-size: 20px;
+}
+.money{
+    font-size: 20px;
+}
+
+
+
+
+
+.third{
+    width: 600px;
+    
+    margin: auto;
+
+}
+.dis{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.doller{
+    display: flex;
+    align-items: center;
+
+}
+.delete{
+    padding-left: 10px;
+    font-size: 20px;
+}
+.delete:hover{
+    color: rgb(255, 59, 59);
+    cursor: pointer;
+}
+.salary{
+    font-size: 21px;
+    padding-bottom: 4px;
+}
+.des{
+    color: rgb(55, 55, 55);
+    font-size: 17px;
+}
+.five{
+    font-size: 21px;
+}
+.li1{
+    border: 1px solid rgba(0, 0, 0, 0.511);
+    margin-top: 7px;
+    border-right: 3px solid rgb(0, 201, 0);
+}
+.li2{
+    border: 1px solid rgba(0, 0, 0, 0.511);
+    margin-top: 7px;
+    border-right: 3px solid rgb(236, 55, 0);
+}
+.bton{
+    border: 0;
+    background: #00000000;
+}

@@ -77,7 +77,7 @@ const Auth = () => {
 {isLogin ? ( 
   <>
   <p className='heading'>SignUp</p>
-<form onSubmit={submitHandler}>
+<form onSubmit={submitHandler} className='userForm'>
 <input className='input' type="email" placeholder='Email'  required ref={emailInputRef} />
 <input className='input' type="password" placeholder='Password' required />
 <input className='input' type="password"  placeholder='Confirm Password' required ref={passwordInputRef} />
@@ -86,7 +86,7 @@ const Auth = () => {
 </> ) : (
   <>
    <p className='heading'>Login</p>
-<form onSubmit={submitHandler}>
+<form onSubmit={submitHandler} className='userForm'>
 <input className='input' type="email" placeholder='Email'  required ref={emailInputRef} />
 
 <input className='input' type="password" placeholder='Confirm Password' required ref={passwordInputRef} />

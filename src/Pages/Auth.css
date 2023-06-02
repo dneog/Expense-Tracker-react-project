@@ -73,3 +73,8 @@
     font-size: 19px;
     cursor: pointer;
 }
+
+.userForm{
+    display: flex;
+    flex-direction: column;
+}

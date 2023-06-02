@@ -11,6 +11,7 @@ function App() {
     <Routes>
      <Route path='/' element={<Auth />} />
      <Route path='/home' element={<Home />} />
+     <Route path='/home/:id' element={<Home />} />
      <Route path='/profile' element={<Profile />} />
      <Route path='/password' element={<ForgotPassword />} />
      </Routes>

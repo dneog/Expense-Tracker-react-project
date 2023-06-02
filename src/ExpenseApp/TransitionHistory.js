@@ -1,42 +1,39 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 const TransitionHistory = ({transactions, onDelete}) => {
   return (
     <div>
      <p className='tran3'>Transaction History</p>
-     <div className='third'>
 
-     
+
+     <div className='third'>
      <ul>
-     { transactions.map((data)=> (
+     { Object.keys(transactions).map((id, index)=> (
       <>
-      {data.type=== 'income' ? 
-        <li className='li1' key={data.id}>
+      {  
+        <li className={transactions[id].type=== 'income' ? 'li1': 'li2'} key={id}>
             <div className='dis'>
                 <div>
-                <p className='salary'>{data.category}</p>
-                <p className='des'>{data.name}</p>
+                
+                <p className='salary'>{transactions[id].category}</p>
+                <p className='des'>{transactions[id].name}</p>
                 </div>
                 <div className='doller'>
-                <p className='five'>${data.amount}</p>
-                <button className='bton' onClick={()=> onDelete(data.id)}> <i class="bi bi-x-circle delete"></i></button>    
+                <p className='five'>${transactions[id].amount}</p>
+                <p></p>
+                <p></p>
+                <Link to={`/home/${id}`}>
+                <button className='bton'> <i class="bi bi-pencil-square delete2"></i></button>   
+              </Link>
+               
+             
+               
+                <button className='bton' onClick={()=> onDelete(id)}> <i class="bi bi-x-circle delete"></i></button>    
+                
                 </div>
            
             </div>
-        </li> :  <li className='li2' key={data.id}>
-            <div className='dis'>
-                <div>
-                <p className='salary'>{data.category}</p>
-                <p className='des'>{data.name}</p>
-                </div>
-                <div className='doller'>
-                <p className='five'>${data.amount}</p>
-                <button className='bton' onClick={()=> onDelete(data.id)}> <i class="bi bi-x-circle delete"></i></button>
-                   
-                </div>
-           
-            </div>
-        </li>}
+        </li> }
         </>
         ))
      }

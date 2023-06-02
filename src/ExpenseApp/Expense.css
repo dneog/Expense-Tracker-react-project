@@ -160,6 +160,15 @@
     color: rgb(255, 59, 59);
     cursor: pointer;
 }
+.delete2{
+    padding-left: 10px;
+    font-size: 20px;
+    color: rgb(84, 80, 80);
+}
+.delete2:hover{
+    color: rgb(33, 0, 198);
+    cursor: pointer;
+}
 .salary{
     font-size: 21px;
     padding-bottom: 4px;

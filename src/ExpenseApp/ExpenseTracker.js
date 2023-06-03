@@ -6,6 +6,7 @@ import TransitionHistory from './TransitionHistory';
 import { randomID } from '../util';
 import {useParams} from 'react-router-dom';
 import db from '../firebase'
+import ActivePremium from './ActivePremium';
 
 const TransactionData= {}
 const ExpenseTracker = () => {
@@ -140,15 +141,19 @@ const ExpenseTracker = () => {
   
   
   return (
+    <>
+    <ActivePremium income={income} />
     <div className='expenseMain'>
     <h2 className='exp'>Expense Tracker</h2>
     <div className='add'>
+    
     <AddExpense newTransaction= {transactions} />
     <Expense income={income} expense={expense} />
    
     </div>
     <TransitionHistory transactions={transactions} onDelete={handleDelete} />
     </div>
+    </>
   )
   }
 

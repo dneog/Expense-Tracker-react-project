@@ -45,11 +45,11 @@
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 10px;
+    margin: 7px;
     border: 0.5px solid rgba(0, 0, 0, 0);
     background: #2c72ff;
     color: white;
-    margin-top: 15px;
+    margin-top: 7px;
     margin-bottom: 15px;
     transition: all 0.2s;
 }

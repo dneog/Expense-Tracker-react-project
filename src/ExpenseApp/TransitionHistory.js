@@ -19,7 +19,7 @@ const TransitionHistory = ({transactions, onDelete}) => {
                 <p className='des'>{transactions[id].name}</p>
                 </div>
                 <div className='doller'>
-                <p className='five'>${transactions[id].amount}</p>
+                <p className='five'> {transactions[id].amount}&#8377;</p>
                 <p></p>
                 <p></p>
                 <Link to={`/home/${id}`}>

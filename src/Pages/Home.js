@@ -2,16 +2,19 @@ import React from 'react'
 import { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import VerifyEmail from '../VerifyEmail';
-import AuthContext from '../Store/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import ExpenseTracker from '../ExpenseApp/ExpenseTracker';
+// import AuthContext from '../Store/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../Store/Action';
+import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
   const navigate= useNavigate()
-  const authCtx= useContext(AuthContext);
-  const isLoggedin= authCtx.isLoggedin
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
   const logoutHandler=()=> {
-    authCtx.logout();
+    dispatch(logout());
     navigate('/')
   }
   return (

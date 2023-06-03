@@ -4,9 +4,12 @@ import { useState, useRef , useContext} from 'react';
 import AuthContext from '../Store/AuthContext';
 import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login } from '../Store/Action';
 
 const Auth = () => {
   const navigate= useNavigate();
+  const dispatch = useDispatch();
  const authCtx= useContext(AuthContext);
   const emailInputRef= useRef();
   const passwordInputRef= useRef();
@@ -59,7 +62,7 @@ const Auth = () => {
       })
           
           .then(data=> {
-            authCtx.login(data.idToken);
+            dispatch(login(data.idToken));
             navigate('/home')
           }).catch(err=> {
             alert(err.message)

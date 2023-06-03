@@ -49,7 +49,7 @@ if(!id){
     if(err){
      alert(err)
     }else{
-     alert('Data Added Successfully')
+     console.log('Data Added Successfully')
     }
   })
 }else{

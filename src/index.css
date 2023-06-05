@@ -5,3 +5,32 @@
   list-style: none;
   text-decoration: none;
 }
+
+:root{
+  --color-white: #ffffff;
+  --color-dark: #333;
+  --color-purpul: rgb(104, 48, 189);
+  --color-green: rgb(49, 144, 9);
+  --color-red: rgb(158, 23, 8);
+  --color-grey: rgb(203, 203, 203);
+  --color-light: #b1b1b1;
+  --color-input: #eeeeee;
+  --color-edit: #dbdbdb;
+  --background: var(--color-white);
+  --forground:var(--color-dark);
+
+}
+
+[data-theme= 'dark']{
+  --color-white: #ffffff;
+  --color-light: #868686;
+  --color-edit: #6a1717d1;
+  --color-input: #ffffff;
+  --color-dark: #333;
+  --color-green: #baffc1;
+  --color-red: rgb(255, 153, 142);
+  --color-grey: rgb(77, 77, 77);
+  --color-purpul: rgb(194, 153, 255);
+  --background: var(--color-dark);
+  --forground:var(--color-white);
+}

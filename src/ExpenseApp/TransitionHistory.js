@@ -1,6 +1,22 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { CSVLink } from "react-csv";
+import './Expense.css'
 const TransitionHistory = ({transactions, onDelete}) => {
+
+ const headers = [
+    { label: "Category", key: "category" },
+    { label: "Description", key: "name" },
+    { label: "Amount", key: "amount" },
+    { label: "Type", key: "type" }
+  ];
+
+  const csvUserData = Object.keys(transactions).map(id => ({
+    category: transactions[id].category,
+    name: transactions[id].name,
+    amount: transactions[id].amount,
+    type: transactions[id].type,
+  }));
   return (
     <div>
      <p className='tran3'>Transaction History</p>
@@ -39,6 +55,13 @@ const TransitionHistory = ({transactions, onDelete}) => {
      }
      </ul>
      </div>
+     {csvUserData.length > 0 && (
+      <CSVLink className='download' data={csvUserData} headers={headers}>
+  <p className='down'>Download Data</p> 
+</CSVLink>
+     )}
+    
+     
     </div>
   )
 }

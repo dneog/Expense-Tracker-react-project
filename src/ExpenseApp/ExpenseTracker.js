@@ -9,7 +9,7 @@ import db from '../firebase'
 import ActivePremium from './ActivePremium';
 
 const TransactionData= {}
-const ExpenseTracker = () => {
+const ExpenseTracker = ({theme, toggleTheme, onSwitch}) => {
   const {id}= useParams()
 
   const [income, setIncome]= useState(0);
@@ -142,8 +142,8 @@ const ExpenseTracker = () => {
   
   return (
     <>
-    <ActivePremium income={income} />
-    <div className='expenseMain'>
+    <ActivePremium income={income} theme={theme} toggleTheme={toggleTheme} onSwitch={onSwitch} />
+    <div  className='expenseMain'>
     <h2 className='exp'>Expense Tracker</h2>
     <div className='add'>
     

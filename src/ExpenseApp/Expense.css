@@ -2,6 +2,8 @@
     width: 70%;
     margin: 30px auto;
    min-width: 600px;
+   color: var(--background);
+   background: var(--forground) ;
 
 }
 .add{
@@ -13,14 +15,14 @@
     display: flex;
     flex-direction: column;
     width: 40%;
-    border: 0.5px solid rgba(0, 0, 0, 0.511);
+    border: 1px solid  var(--color-light);
     margin: 10px;
 }
 
 
 .total{
     width: 40%;
-    border: 0.5px solid rgba(0, 0, 0, 0.488);
+    border: 1px solid  var( --color-light);
     margin: 10px;
     padding: 10px;
     
@@ -53,7 +55,7 @@
     padding-bottom: 5px;
 }
 .amounts{
-   
+    background: var(--color-input);
     outline: none;
     padding: 7px 5px;
     font-size: 18px;
@@ -61,6 +63,7 @@
     border-radius: 5px;
 }
 .amounts3{
+    background: var(--color-input);
     margin-top: 9px;
     outline: none;
     padding: 7px 5px;
@@ -69,6 +72,7 @@
     border-radius: 5px;
 }
 .amounts2{
+    background: var(--color-input);
     outline: none;
     border-radius: 5px;
     padding: 7px 5px;
@@ -100,16 +104,16 @@
 
 
 .balance{
-    background: #e1e7ff;
+    background: var( --color-purpul);
     margin-top: 10px;
     padding: 18px;
     display: flex;
     justify-content: space-between;
-    border-right: 5px solid rgb(194, 153, 255);
+    border-right: 5px solid rgb(181, 43, 245);
     
 }
 .balance2{
-    background: #baffc1;
+    background: var(--color-green);
     margin-top: 10px;
     padding: 18px;
     display: flex;
@@ -118,7 +122,7 @@
     
 }
 .balance3{
-    background: #ffb6b6;
+    background: var( --color-red);
     margin-top: 10px;
     padding: 18px;
     display: flex;
@@ -155,6 +159,7 @@
 .delete{
     padding-left: 10px;
     font-size: 20px;
+    color: var(--background);
 }
 .delete:hover{
     color: rgb(255, 59, 59);
@@ -163,10 +168,10 @@
 .delete2{
     padding-left: 10px;
     font-size: 20px;
-    color: rgb(84, 80, 80);
+    color: var(--color-edit);
 }
 .delete2:hover{
-    color: rgb(33, 0, 198);
+    color: rgb(179, 114, 10);
     cursor: pointer;
 }
 .salary{
@@ -174,19 +179,19 @@
     padding-bottom: 4px;
 }
 .des{
-    color: rgb(55, 55, 55);
+    color: var( --color-grey);
     font-size: 17px;
 }
 .five{
     font-size: 21px;
 }
 .li1{
-    border: 1px solid rgba(0, 0, 0, 0.511);
+    border: 1px solid var( --color-light);
     margin-top: 7px;
     border-right: 3px solid rgb(0, 201, 0);
 }
 .li2{
-    border: 1px solid rgba(0, 0, 0, 0.511);
+    border: 1px solid var( --color-light);
     margin-top: 7px;
     border-right: 3px solid rgb(236, 55, 0);
 }
@@ -211,4 +216,9 @@
    top: -68px;
    border-radius: 5px;
    cursor: pointer;
+}
+
+.down{
+    text-align: center;
+    padding-top: 12px;
 }

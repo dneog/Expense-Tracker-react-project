@@ -1,8 +1,16 @@
+
+.app{
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--background);
+    background: var(--forground);
+}
+
 .wel{
     margin: 20px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--background);
     padding: 15px;
     font-size: 18px;
 }
@@ -11,7 +19,7 @@
 }
 
 .wel span{
-    color: rgb(13, 0, 255);
+    color: rgb(232, 123, 0);
     font-style: italic;
 }
 

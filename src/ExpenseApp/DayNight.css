@@ -1,0 +1,31 @@
+.toggle{
+    width: 40px;
+    height: 12px;
+    background: #181818;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transform: scale(1.5);
+
+}
+.ball{
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: all 0.2s linear ;
+
+}
+.pink{
+    color: pink;
+}
+.move{
+    transform: translateX(27px);
+}

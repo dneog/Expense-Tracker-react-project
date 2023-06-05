@@ -1,23 +1,24 @@
-import AuthContext from '../Store/AuthContext'
-
-import { useRef, useContext } from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { updateProfile } from '../Store/Action';
 import GetProfileData from './GetProfileData';
-
 const ProfileForm = () => {
-  const navigate= useNavigate();
-  const newNameInputRef= useRef();
-  const newImageInputRef= useRef();
-  const authCtx=useContext(AuthContext)
-  const submitHandler=(e)=> {
-    e.preventDefault();
-    const enteredName= newNameInputRef.current.value;
-    const enteredImageUrl= newImageInputRef.current.value;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const newNameInputRef = useRef();
+  const newImageInputRef = useRef();
+  const { token } = useSelector((state) => state);
 
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE',{
-      method:'POST',
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const enteredName = newNameInputRef.current.value;
+    const enteredImageUrl = newImageInputRef.current.value;
+
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE', {
+      method: 'POST',
       body: JSON.stringify({
-        idToken: authCtx.token,
+        idToken: token,
         displayName: enteredName,
         photoUrl: enteredImageUrl,
         returnSecureToken: false
@@ -25,16 +26,18 @@ const ProfileForm = () => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }
-    
-    ).then(res=> {
-      navigate('/home')
-    }).catch(err=> {
+    })
+      .then((res) => {
+        dispatch(updateProfile(enteredName, enteredImageUrl));
+        navigate('/home');
+      })
+      .catch((err) => {
         console.log(err);
-    }
+      });
+  };
 
-    )
-  }
+ 
+
   return (
     <>
     <form className='' onSubmit={submitHandler} >
@@ -56,3 +59,5 @@ const ProfileForm = () => {
 }
 
 export default ProfileForm;
+
+

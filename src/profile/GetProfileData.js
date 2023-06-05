@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import AuthContext from '../Store/AuthContext';
+import { setUserData } from '../Store/Action';
 import { useContext } from 'react';
-import { json } from 'react-router-dom';
-const GetProfileData =  () => {
-    const [displayName, setDisplayName]= useState('');
-    const [email, setEmail]= useState('');
-    const [photoUrl, setPhotoUrl]= useState('');
 
-    const authCtx=useContext(AuthContext);
-    useEffect(()=> {
-    const url= 'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE'
+const GetProfileData = () => {
+  const dispatch = useDispatch();
+  const { token } = useContext(AuthContext);
+  
+  const { displayName, email, photoUrl } = useSelector((state) => state);
 
-    const body= {
-        idToken: authCtx.token
+  useEffect(() => {
+    
+
+    const body = {
+      idToken: token
     };
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-       body: JSON.stringify(body)
-    }).then((response)=> {
-        if(response.ok){
-            return response.json()
-        }else{
-            throw new Error('Not able to get User Data')
-        }
-    }).then((data)=> {
-        if(data.users && data.users.length > 0){
-            const user = data.users[0]
-            setDisplayName(user.displayName);
-            setEmail(user.email);
-            setPhotoUrl(user.photoUrl);
-        }
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
     })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.log('error');
+        }
+      })
+      .then((data) => {
+        if (data && data.users && data.users.length > 0) {
+          const user = data.users[0];
+          dispatch(setUserData(user.displayName, user.email, user.photoUrl));
+        }
+      });
+  }, [token, dispatch]);
 
-}, [authCtx.token])
+  
 
   return (
     <>

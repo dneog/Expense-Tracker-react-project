@@ -1,74 +1,66 @@
 
 import './Auth.css';
-import { useState, useRef , useContext} from 'react';
-import AuthContext from '../Store/AuthContext';
-import { Link } from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
+
+import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../Store/Action';
 
 const Auth = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
- const authCtx= useContext(AuthContext);
-  const emailInputRef= useRef();
-  const passwordInputRef= useRef();
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
   const [isLogin, setIsLogin] = useState(true);
-  const [loading, setLoading]= useState(false);
-
+  const [loading, setLoading] = useState(false);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
 
-  const submitHandler=(e)=>{
+  const submitHandler = (e) => {
     e.preventDefault();
-    const enteredEmail= emailInputRef.current.value;
-    const enteredPassword= passwordInputRef.current.value;
-    setLoading(true)
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+    setLoading(true);
     let url;
-    if(isLogin){
-      url= 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE' 
-     
-    }else{
-      url= 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE'
+    if (isLogin) {
+      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE';
+    } else {
+      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAcs8nLn2SZVKhB4JcRURQvIPdouSEVqgE';
     }
-    fetch(url,
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          email: enteredEmail,
-          password: enteredPassword,
-          returnSecureToken: true
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken: true
+      }),
+      headers: {
+        'Content-Type': 'application/json'
       }
-      ).then(res=> {
-        setLoading(false)
-        if(res.ok){
-            return res.json()
-        }else{
-         return res.json().then(data=> {
-           
-            let errorMessage= 'Authentication Failed';
-            
-           
-            throw new Error(errorMessage)
-
-          })
+    })
+      .then((res) => {
+        setLoading(false);
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = 'Authentication Failed';
+            throw new Error(errorMessage);
+          });
         }
       })
-          
-          .then(data=> {
-            dispatch(login(data.idToken));
-            navigate('/home')
-          }).catch(err=> {
-            alert(err.message)
-          })
-        
-  }
+      .then((data) => {
+        dispatch(login(data.idToken));
+        navigate('/home');
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
+ 
 
 
 
@@ -125,3 +117,7 @@ const Auth = () => {
 }
 
 export default Auth
+
+
+
+

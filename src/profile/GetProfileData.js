@@ -55,7 +55,7 @@ const GetProfileData = () => {
     </div>
     <div className='sec'>
     <p className='na'><span> Name : </span>{displayName}</p>
-    <p className='em'><span> Email : </span> {email}</p>
+    <p className='em'><span> </span> {email}</p>
     </div>
     </div>
     </>

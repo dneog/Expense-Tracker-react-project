@@ -5,7 +5,7 @@ const Expense = ({income, expense}) => {
     <div className='total'>
     <p className='tran2'>Summery</p>
         <div className='balance'>
-        <p className='bal'>Total Balance</p>
+        <p className='bal' >Total Balance</p>
         <p className='money'>{income-expense}&#8377;</p>
         </div>
         <div className='balance2'>

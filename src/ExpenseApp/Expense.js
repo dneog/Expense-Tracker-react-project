@@ -1,6 +1,9 @@
 import React from 'react'
+import { useState } from 'react';
+
 
 const Expense = ({income, expense}) => {
+  const [changeText, setChangeText]= useState(false)
   return (
     <div className='total'>
     <p className='tran2'>Summery</p>

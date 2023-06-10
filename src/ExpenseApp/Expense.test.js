@@ -11,6 +11,34 @@ describe('Check balence', ()=> {
   });
 
 })
+describe('Check Summery', ()=> {
+  test('render summery', () => {
+    render(<Expense />);
+    
+    const sum = screen.getByText("Summery");
+    expect(sum).toBeInTheDocument();
+  });
+
+})
+describe('Check Income', ()=> {
+  test('render Income', () => {
+    render(<Expense />);
+    
+    const sum = screen.getByText("Income");
+    expect(sum).toBeInTheDocument();
+  });
+
+})
+
+describe('Check Expense', ()=> {
+  test('render Expense', () => {
+    render(<Expense />);
+    
+    const sum = screen.getByText("Expense");
+    expect(sum).toBeInTheDocument();
+  });
+
+})
 
 
 
